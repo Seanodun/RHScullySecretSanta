@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RH Secret Santa</title>
+<style>
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+input{
+padding:10px;
+font-size:18px;
+}
+button{
+padding:10px 20px;
+font-size:18px;
+margin-left:10px;
+}
+#result{
+margin-top:20px;
+font-size:24px;
+}
+</style>
+</head>
+<body>
+
+<h1>🎅 RH Secret Santa 🎅</h1>
+
+<p>Enter your code:</p>
+
+<input id="code">
+
+<button onclick="showPerson()">Reveal</button>
+
+<div id="result"></div>
+
+<script>
+const assignments = {
+"RW4731":"Jack Lynch",
+"BE5821":"Alex Liddy",
+"JL1629":"Ryan Bryce",
+"RB8472":"David Lyster"
+};
+
+function showPerson(){
+const code = document.getElementById("code").value.toUpperCase();
+document.getElementById("result").innerHTML =
+assignments[code]
+? "🎁 You got: <b>"+assignments[code]+"</b>"
+: "❌ Invalid code";
+}
+</script>
+
+</body>
+</html>
